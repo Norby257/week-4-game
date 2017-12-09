@@ -12,38 +12,79 @@
     <title>Crystal Catcher!</title>
 </head>
 <body>
+    <div class="jumbotron">
+        <h1 class="text-center">Crystal Catcher</h1>
+        <h3 class="text-center">Can you match the number?</h3>
+    </div>
+
     <div class="container">
-        <div class="logo">
-            <span></span>
-        </div>
-        <div class="main-section">
+        <div class="row">
+            <!-- instruction panel -->
+            <div class="col-lg-4"></div>
+                <div class="panel panel-default" "col-lg-4">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">crystal catcher</h3>
+                        <p class="text-centered">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore beatae voluptatem quam quibusdam, commodi aperiam modi repellat maxime nostrum excepturi velit tenetur exercitationem inventore doloribus obcaecati ipsam numquam mollitia tempora?</p>
+                        <p class="text-centered">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus alias aperiam, vero ducimus provident voluptatibus non ea amet sit rerum corporis id ipsam doloribus possimus laboriosam sed omnis. Tempore, illo.</p>
+                        <p class="text-centered">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate eum odit expedita quidem sapiente at quo facilis sed deserunt nemo, natus quasi ipsum eveniet quod voluptas, quibusdam corrupti, dignissimos atque.</p>
+                    </div>
+                    </div>
+                </div>
+
 
         </div>
 
-        <div id="number">
-            <span></span>
-        </div>
 
-        <div id="gameScore">
-            <h3>Wins:</h3>
-            <h3>Losses:</h3>
-        </div>
+    </div>
 
-        <div class="images"> <!-- should the four images be clickable/ attached to events -->
-            <img src="assets/images/gem_1.png" alt="first gem" id ="first-gem">
-            <img src="assets/images/gem_2.jpeg" alt="second-gem" id ="second-gem">
-            <img src="assets/images/gem_3.jpeg" alt="third-gem">
-            <img src="assets/images/gem_4.jpeg" alt="fourth-gem">
-        </div>
+    <!-- panel for computer nummber -->
 
-        <div>
-            <h3>Your Total Score is:</h3>
-        </div>
-
-        <div id="score">
-
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="panel col-lg-6">
+                <p>Computer Number:</p>
+            </div>
         </div>
     </div>
+
+    <!-- panel for wins and losses -->
+    <div class="col-lg-6" "pull-right">
+        <div class="row">
+            <div class="panel col-lg-6">
+                <p>Wins:</p>
+                <p>Losses</p>
+            </div>
+        </div>
+    </div>
+                 
+
+       <!-- panel for images -->
+    <div class="row"></div>
+    <div class="col-lg-12">
+        <div class="panel panel-default" "col-lg-12">
+            <div class="row">
+                    <div class="images">
+                        <img class="col-lg-3" src="assets/images/gem_2.jpeg" alt="second-gem" id ="second-gem">
+                        <img class="col-lg-3" src="assets/images/gem_3.jpeg" alt="third-gem" id ="third-gem">
+                        <img class="col-lg-3" src="assets/images/gem_4.jpeg" alt="fourth-gem" id ="fourth-gem">
+                        <img src="" alt=""> <!-- will get a fourth one shortly -->
+                    </div>
+            </div>
+               
+        </div>
+    </div>
+</div>
+
+<!-- panel for total score -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default" "col-lg-6">
+            <p class="text-center">Total Score:</p>
+        </div>
+    </div>
+</div>
+
+        
 <!-- link to jQuery -->
 <script src="https://code.jquery.com/jquery.js"></script>    
 <script src = "assets/javascript/game.js"></script>
