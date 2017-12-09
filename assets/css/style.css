@@ -7,3 +7,28 @@ body {
     height: 200px;
     width: 200px;
 }
+
+.container {
+    box-sizing: border-box;
+}
+
+/* main content temporary background colors */
+.main-section {
+    width:45%;
+    height: 30%;
+    background-color: white; 
+}
+
+#number {
+    background-color: green;
+
+
+}
+
+
+#gameScore {
+    background-color: green;
+
+}
+
+/* nice to have : mobile responsive */
