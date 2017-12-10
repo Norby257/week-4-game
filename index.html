@@ -121,6 +121,33 @@ $(document).ready(function() {
 });
 
 // do this for each gem, and test it each time
+$("#first-gem").on("click", function() {
+    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
+    console.log(crystalNumber);
+    console.log(computerNumber);
+    $("#total-score").append(crystalNumber);
+    
+});
+
+$("#third-gem").on("click", function() {
+    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
+    console.log(crystalNumber);
+    console.log(computerNumber);
+    $("#total-score").append(crystalNumber);
+    
+});
+
+$("#fourth-gem").on("click", function() {
+    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
+    console.log(crystalNumber);
+    console.log(computerNumber);
+    $("#total-score").append(crystalNumber);
+    
+});
+
+
+//keep a running total of the gem scores 
+
 
 
 
