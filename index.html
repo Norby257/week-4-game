@@ -46,7 +46,7 @@
     <div class="col-lg-6">
         <div class="row">
             <div class="panel col-lg-6">
-                <p>Computer's Number</p>
+                <p>Computer's Number:</p>
                 <p id="random-number"></p>
             </div>
         </div>
@@ -68,11 +68,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default" "col-lg-12">
             <div class="row">
-                    <div class="images">
-                         <img class="col-lg-3" src="assets/images/gem_1.png" alt="first-gem" id ="first-gem">                            
-                        <img class="col-lg-3" src="assets/images/gem_2.jpeg" alt="second-gem" id ="second-gem">
-                        <img class="col-lg-3" src="assets/images/gem_3.jpeg" alt="third-gem" id ="third-gem">
-                        <img class="col-lg-3" src="assets/images/gem_4.jpeg" alt="fourth-gem" id ="fourth-gem">
+                 <div id="crystals"></div>
                     </div>
             </div>
                
@@ -87,8 +83,15 @@
         </div>
     </div>
 </div>
+<style>
+    .crystal-Pic {
+        width: 200px;
+        height: 200px;
+    }
+</style>
 
-<!-- for now, I am doing internal JS styles. later on can do separate JS file -->     
+
+<!-- Javascript -->
 <script type = "text/javascript">
 
 $(document).ready(function() {
@@ -100,81 +103,57 @@ $(document).ready(function() {
     var totalScore;
     var computerNumber;
     
-    //arrays for randomly generating the numbers
+  
 
-    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
+    var crystalNumberOptions = Math.floor(Math.random() * (12-1)) + 1;
     var computerNumber = Math.floor( Math.random() * (120-19)) +1; 
+    crystalOptions = [1,2,3,4];
 
-    //Dynamically update the page with the random number 
-    $("#random-number").text(computerNumber); 
-
-    //adding this data attribute to the images class
-    $(".images").attr("data-crystalValue");
-
-    //attaching click event for generating a random number when gem is clicked 
-    $("#second-gem").on("click", function() {
-    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
-    console.log(crystalNumber);
-    console.log(computerNumber); //console log for testing purposes. 
-
-    //getting the data attr value I assigned to images class above; making it specific to this crystal 
-    //will test on this one before moving on 
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    totalScore += crystalValue;
-    //make the data go to corresponding part of page. I.e computer number goes to computer number panel /id / target the right thing
-    $("#total-score").append(crystalNumber);
-    
-});
-
-// do this for each gem, and test it each time
-$("#first-gem").on("click", function() {
-    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
-    console.log(crystalNumber);
+    $("#random-number").text(computerNumber);
     console.log(computerNumber);
-    // crystalNumber = parseInt(crystalNumber);
-    crystalNumber++;
-    $("#total-score").append(crystalNumber);
-    
-    
-});
 
-$("#third-gem").on("click", function() {
-    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
-    console.log(crystalNumber);
-    console.log(computerNumber);
-    $("#total-score").append(crystalNumber);
-    
-});
+    var counter = 0;
 
-$("#fourth-gem").on("click", function() {
-    var crystalNumber = Math.floor(Math.random() * (12-1)) + 1;
-    console.log(crystalNumber);
-    console.log(computerNumber);
-    $("#total-score").append(crystalNumber);
-    
-});
-
-//logic for win-lose - if totalScore === the random number from the computer, then you win. ELSE IF it's greater, then you lose. Reminds me of blackjack
-
-
-if (totalScore === computerNumber) {
-    //console log and alert just for testing purposes 
-    console.log("Yay, you win! Rock on. Click the refresh button to play again!");
-    alert("Yay, you win! Rock on. Click the refresh button to play again!");
-    wins++;
-} else if 
-    (totalScore > computerNumber) {
-        console.log("Oh you, you lost. Click the refresh button to try again");
-        alert("Oh you, you lost. Click the refresh button to try again");
-        losses++;
-        
+    for (var i = 0; i < crystalOptions.length; i++) {
+        var crystalPic = $("<img>");
+        crystalPic.addClass("crystal-Pic");
+        crystalPic.attr("src", "http://www.crystalclearintentions.co.nz/wp-content/uploads/crystals.jpg");
+        crystalPic.attr("data-crystalValue", crystalNumberOptions[i]);
+        $("#crystals").append(crystalPic);
+        console.log(crystalNumberOptions);
     }
 
+//click event 
+$(".crystal-pic").on("click", function() {
+    var crystalValue = ($(this).attr("data-crystalValue"));
+
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+    console.log(crystalValue);
+    alert("Points" + crystalValue);
+    // $("#total-score").text(counter);
+})
+
+// when I try to display total score it over rides the computer one. not sure why 
+// also only one crystal has a num but it;s not working as expected 
+
+// if (totalScore === computerNumber) {
+//     //console log and alert just for testing purposes 
+//     console.log("Yay, you win! Rock on. Click the refresh button to play again!");
+//     alert("Yay, you win! Rock on. Click the refresh button to play again!");
+//     wins++;
+// } else if 
+//     (totalScore > computerNumber) {
+//         console.log("Oh you, you lost. Click the refresh button to try again");
+//         alert("Oh you, you lost. Click the refresh button to try again");
+//         losses++;
+        
+//     }
 
 
 
-});
+
+ });
 
 
 </script>
