@@ -27,10 +27,10 @@
             <div class="col-lg-4"></div>
                 <div class="panel panel-default" "col-lg-4">
                     <div class="panel-heading">
-                        <h3 class="panel-title">crystal catcher</h3>
-                        <p class="text-centered">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore beatae voluptatem quam quibusdam, commodi aperiam modi repellat maxime nostrum excepturi velit tenetur exercitationem inventore doloribus obcaecati ipsam numquam mollitia tempora?</p>
-                        <p class="text-centered">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus alias aperiam, vero ducimus provident voluptatibus non ea amet sit rerum corporis id ipsam doloribus possimus laboriosam sed omnis. Tempore, illo.</p>
-                        <p class="text-centered">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate eum odit expedita quidem sapiente at quo facilis sed deserunt nemo, natus quasi ipsum eveniet quod voluptas, quibusdam corrupti, dignissimos atque.</p>
+                        <h3 class="panel-title">crystal catcher!</h3>
+                        <p class="text-centered">Can you match the Number? Click on each crystal below to add points to your score.</p>
+                        <p class="text-centered">Each crystal has a different number, click it and enjoy the surprise!</p>
+                        <p class="text-centered">If your score matches the number, then you win! If your score exceeds the number, than you lose! But worry not, just play it again!</p>
                     </div>
                     </div>
                 </div>
@@ -56,8 +56,8 @@
     <div class="col-lg-6" "pull-right">
         <div class="row">
             <div class="panel col-lg-6">
-                <p>Wins:</p>
-                <p>Losses</p>
+                <p id ="wins">Wins:</p>
+                <p id ="losses">Losses:</p>
             </div>
         </div>
     </div>
@@ -67,8 +67,14 @@
     <div class="row"></div>
     <div class="col-lg-12">
         <div class="panel panel-default" "col-lg-12">
-            <div class="row">
-                 <div id="crystals"></div>
+            <div class="row"></div>
+                 <div id="crystals">
+
+
+                 </div>
+                 </div>
+    
+                 
                     </div>
             </div>
                
@@ -92,70 +98,8 @@
 
 
 <!-- Javascript -->
-<script type = "text/javascript">
+<script src="https://code.jquery.com/jquery.js"></script>    
 
-$(document).ready(function() {
-
-    //vars global to runtime 
-
-    var wins;
-    var losses; 
-    var totalScore;
-    var computerNumber;
-    
-  
-
-    var crystalNumberOptions = Math.floor(Math.random() * (12-1)) + 1;
-    var computerNumber = Math.floor( Math.random() * (120-19)) +1; 
-    crystalOptions = [1,2,3,4];
-
-    $("#random-number").text(computerNumber);
-    console.log(computerNumber);
-
-    var counter = 0;
-
-    for (var i = 0; i < crystalOptions.length; i++) {
-        var crystalPic = $("<img>");
-        crystalPic.addClass("crystal-Pic");
-        crystalPic.attr("src", "http://www.crystalclearintentions.co.nz/wp-content/uploads/crystals.jpg");
-        crystalPic.attr("data-crystalValue", crystalNumberOptions[i]);
-        $("#crystals").append(crystalPic);
-        console.log(crystalNumberOptions);
-    }
-
-//click event 
-$(".crystal-pic").on("click", function() {
-    var crystalValue = ($(this).attr("data-crystalValue"));
-
-    crystalValue = parseInt(crystalValue);
-    counter += crystalValue;
-    console.log(crystalValue);
-    alert("Points" + crystalValue);
-    // $("#total-score").text(counter);
-})
-
-// when I try to display total score it over rides the computer one. not sure why 
-// also only one crystal has a num but it;s not working as expected 
-
-// if (totalScore === computerNumber) {
-//     //console log and alert just for testing purposes 
-//     console.log("Yay, you win! Rock on. Click the refresh button to play again!");
-//     alert("Yay, you win! Rock on. Click the refresh button to play again!");
-//     wins++;
-// } else if 
-//     (totalScore > computerNumber) {
-//         console.log("Oh you, you lost. Click the refresh button to try again");
-//         alert("Oh you, you lost. Click the refresh button to try again");
-//         losses++;
-        
-//     }
-
-
-
-
- });
-
-
-</script>
+<script src = "assets/javascript/game.js"></script>
 </body>
 </html>
