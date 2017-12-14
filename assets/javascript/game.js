@@ -17,12 +17,13 @@ $(document).ready(function() {
         
         //choices for random numbers for crystals --but this has to be for each one 
         var crystalValue = Math.floor(Math.random() * (12-1));   
-        
-        //temp choices for random numbers
+        console.log(crystalValue);
+        // $("#total-score").append(crystalValue);
 
-        crystalNumbers = [5,2,11,9];
-        
-        // dynamically update the DOM using a four loop 
+        //do i need to make an object and make a method? 
+
+        crystalNumbers = [(Math.floor(Math.random() * (12-1)), $(".crystal-image"))];
+        // dynamically update the DOM using a for loop 
         for (var i = 0; i < crystalNumbers.length; i++ ) {
                         //make an image 
 
