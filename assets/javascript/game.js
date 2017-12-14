@@ -22,23 +22,17 @@ $(document).ready(function() {
         //choices for random numbers for crystals --but this has to be for each one 
 
         var crystalOne = Math.floor(Math.random() * (12-1));   
-        console.log(crystalOne);
 
         var crystalTwo = Math.floor(Math.random() * (12-1));   
-        console.log(crystalTwo);
 
         var crystalThree = Math.floor(Math.random() * (12-1));   
-        console.log(crystalThree);
 
         var crystalFour = Math.floor(Math.random() * (12-1));   
-        console.log(crystalFour);
 
         var crystalValue = Math.floor(Math.random() * (12-1));   
-        console.log(crystalValue);
 
 
-        var crystalValue = Math.floor(Math.random() * (12-1));   
-        console.log(crystalValue);
+        
         // $("#total-score").append(crystalValue);
 
         crystalNumberOptions = [0,1,2,3];
@@ -70,16 +64,60 @@ $(document).ready(function() {
 
         //had this functioning on saturday; then for sure broke it on tuesday but not sure how 
 
-        $(".crystal-image").on("click", function() {
+
+
+        $("#crystalOne").on("click", function() {
             var crystalValue = ($(this).attr("data-crystalvalue"));
             console.log(crystalValue);
-            $("#total-score").text(crystalValue);
+            $("#total-score").attr(crystalValue);
 
             crystalValue = parseInt(crystalValue);
             counter += crystalValue;
-
-
-        
         })
+
+        $("#crystalTwo").on("click", function() {
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            console.log(crystalValue);
+            $("#total-score").attr(crystalValue);
+
+            crystalValue = parseInt(crystalValue);
+            counter += crystalValue;
+        })
+
+        $("#crystalThree").on("click", function() {
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            console.log(crystalValue);
+            $("#total-score").attr(crystalValue);
+
+            crystalValue = parseInt(crystalValue);
+            counter += crystalValue;
+        })
+
+        $("#crystalFour").on("click", function() {
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            console.log(crystalValue);
+            $("#total-score").attr(crystalValue);
+
+            crystalValue = parseInt(crystalValue);
+            counter += crystalValue;
+        })
+        
+        
+
+        //if else game logic 
+
+        if (computerNumber === counter ) {
+            wins++; 
+            $("#wins").text(wins);
+            $("<p>").text("Yay, you won")
+    
+        }
+
+        else if (counter >= computerNumber) {
+            losses++;
+            $("#losses".text(losses));
+            $("<p>").text("Oh no, you lost! Try again!")
+        
+        }
         
 });
