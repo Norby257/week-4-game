@@ -20,15 +20,16 @@ $(document).ready(function() {
         console.log(crystalValue);
         // $("#total-score").append(crystalValue);
 
-        //do i need to make an object and make a method? 
 
-        crystalNumbers = [(Math.floor(Math.random() * (12-1)), $(".crystal-image"))];
+
+        crystalNumbers = [(Math.floor(Math.random() * (12-1)), $("<img>"))];
         // dynamically update the DOM using a for loop 
+        //this was also working on saturday but now today only one crystal is showing 
         for (var i = 0; i < crystalNumbers.length; i++ ) {
                         //make an image 
 
             var crystalImage = $("<img>");
-            //add a clas to it 
+            //add a class to it 
          crystalImage.addClass = $("crystal-image");
 
             //give each one attr src 
@@ -45,13 +46,15 @@ $(document).ready(function() {
 
         //click event 
 
+        //had this functioning on saturday; then for sure broke it on tuesday but not sure how 
+
         $(".crystal-image").on("click", function() {
             var crystalValue = ($(this).attr("data-crystalvalue"));
             console.log(crystalValue);
             $("#total-score").text(crystalValue);
-            
-            // crystalValue = parseInt(crystalValue);
-            // counter += crystalValue;
+
+            crystalValue = parseInt(crystalValue);
+            counter += crystalValue;
 
 
         
