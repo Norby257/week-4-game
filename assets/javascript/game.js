@@ -9,6 +9,10 @@ $(document).ready(function() {
         var losses; 
         var counter = 0;
         var computerNumber = Math.floor( Math.random() * (120-19)); 
+        var crystalOne;
+        var crystalTwo;
+        var cystalThree;
+        var crystalFour;
         
         //display computerNumber on the screen
         $("#random-number").text(computerNumber);
@@ -16,16 +20,33 @@ $(document).ready(function() {
         console.log(computerNumber);
         
         //choices for random numbers for crystals --but this has to be for each one 
+
+        var crystalOne = Math.floor(Math.random() * (12-1));   
+        console.log(crystalOne);
+
+        var crystalTwo = Math.floor(Math.random() * (12-1));   
+        console.log(crystalTwo);
+
+        var crystalThree = Math.floor(Math.random() * (12-1));   
+        console.log(crystalThree);
+
+        var crystalFour = Math.floor(Math.random() * (12-1));   
+        console.log(crystalFour);
+
+        var crystalValue = Math.floor(Math.random() * (12-1));   
+        console.log(crystalValue);
+
+
         var crystalValue = Math.floor(Math.random() * (12-1));   
         console.log(crystalValue);
         // $("#total-score").append(crystalValue);
 
-
+        crystalNumberOptions = [0,1,2,3];
 
         crystalNumbers = [(Math.floor(Math.random() * (12-1)), $("<img>"))];
         // dynamically update the DOM using a for loop 
         //this was also working on saturday but now today only one crystal is showing 
-        for (var i = 0; i < crystalNumbers.length; i++ ) {
+        for (var i = 0; i < crystalNumberOptions.length; i++ ) {
                         //make an image 
 
             var crystalImage = $("<img>");
@@ -39,6 +60,7 @@ $(document).ready(function() {
             // give each one a dta attribute 
 
             crystalImage.attr("data-crystalvalue",crystalNumbers[i]);
+
 
             //add it to the page, to the crystals div
             $("#crystals").append(crystalImage);
